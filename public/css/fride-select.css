@@ -347,3 +347,15 @@ button svg{
 .pp3 span{
     color: red;
 }
+
+.error {
+    border: 1px solid rgb(255, 85, 85);
+    background-color:#ffb0b0 ;
+    color: red;
+}
+.error:focus{
+    border: none;
+    border-bottom:1.6px solid #fd6464;
+    background-color: #fd6464;
+    border-radius: 0px;
+}
